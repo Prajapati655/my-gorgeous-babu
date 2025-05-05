@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My gorgeous Bewdi 😘 </title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cookie&family=Sacramento&family=Poppins:wght@300&family=Quicksand:wght@500&display=swap');
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(-45deg, #FFB6C1, #FF69B4, #FF1493, #FFD700);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            min-height: 500px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 25px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+        }
+
+        .container.fade-out {
+            transform: translateY(-100vh) rotate3d(1, 1, 0, 45deg);
+            opacity: 0;
+        }
+
+        .letter {
+            font-size: 28px;
+            line-height: 1.8;
+            font-family: 'Cookie', cursive;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            white-space: pre-wrap;
+            margin-bottom: 50px;
+            min-height: 300px;
+        }
+
+        .signature {
+            font-family: 'Sacramento', cursive;
+            font-size: 36px;
+            color: white;
+            text-align: right;
+            margin-top: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .signature.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .next-button {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) scale(0.9);
+            padding: 15px 40px;
+            font-size: 24px;
+            font-family: 'Sacramento', cursive;
+            background: linear-gradient(45deg, #FF6F61, #FFABAB);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.5s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .next-button.show {
+            opacity: 1;
+            transform: translateX(-50%) scale(1);
+        }
+
+        .next-button:hover {
+            transform: translateX(-50%) scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .loading-hearts {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            gap: 15px;
+        }
+
+        .loading-hearts span {
+            display: inline-block;
+            font-size: 45px;
+            animation: heartBeat 1.5s infinite;
+        }
+
+        .loading-hearts span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .loading-hearts span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+        }
+
+        .loading-hearts.show {
+            display: flex;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 5px;
+            height: 24px;
+            background: white;
+            margin-left: 2px;
+            animation: blink 1s infinite;
+            vertical-align: middle;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .container {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    max-height: 80vh; /* Limits the container's height to 80% of the screen height */
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 25px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    overflow-y: auto; /* Adds a scroll bar if the content is too long */
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+    </style>
+</head>
+<body>
+    <div class="bokeh">
+        <!-- Bokeh elements added by JS -->
+    </div>
+    <div class="container">
+        <div class="letter"></div>
+        <div class="signature"></div>
+        <button class="next-button">Continue to Next Surprise ❤️</button>
+    </div>
+
+    <div class="loading-hearts">
+        <span>❤️</span>
+        <span>❤️</span>
+        <span>❤️</span>
+    </div>
+
+    <script>
+      const loveLetter = `bewdi 💞,
+
+Yk bewdi Tu kl waise hi nahi lag rahi thi… tu kl kahaani lag rahi thi — jise sirf dekha nahi, mehsoos kiya jaata hai bewdi… 😍
+Aaj tujhse ek baat share karni hai bewdi, jo shayad maine kabhi openly nahi boli… lekin kal tujhe uss traditional dress mein dekh kar, mere dil ne kuch zyada hi mehsoos kiya. Shayad aaj tak tujhe dekha toh tha, par kal tujhe samjha... tera husn sirf aankhon mein nahi, meri saanso mein ghul gaya tha. 💫 Kal jab tune wo dress pehni thi na... lag raha tha jaise chaand zameen par chal raha ho, jaise saari duniya ruk gayi ho aur bas tu chal rahi ho… Itna khoobsurat moment tha ki meri aankhen tujhe dekhte dekhte doob gayi thi. And honestly...
+"Your beauty didn’t just catch my eyes, it stole my breath away." 😮‍💨🔥
+Aur sabse zyada baat jo mere dil ko chhoo gayi… wo thi teri aankhen. Bhagwan ne jab aankhen banayi thi na, tujhe dekh kar unka masterpiece complete hua hoga. Teri aankhon mein kuch toh hai… ek aisi gehraayi jisme doob jaane ka mann karta hai — bina saans liye, bina lautne ki chah ke.
+"Your eyes are galaxies where my soul wants to get lost forever." 🌌
+Tere woh traditional look ne mujhe ekdum silenced kar diya... matlab, main literally kuch bol hi nahi paaya. Sirf ek hi thought chal raha tha — kaash ye moment ruk jaaye, kaash main tujhe dekhta hi rahoon bewdi 🫠, bas. It was like looking at a dream, wide awake. 🤍
+“If elegance had a face, it would be you. And if grace wore a dress, it’d be yesterday’s you.” 💃
+Aur tujhe pata hai? Tere andar ka insaan bhi ussi tarah khoobsurat hai… tu na sirf dikhne mein pyaari hai, balki tera dil, tera nature, tera care… sab kuch priceless hai. Mujhe yaad hai jab main lowest feel karta tha, tu bina kuch bole meri halat samajh jaati thi. Tera support, tera sense of humor, tera patience — sab ek rare combo hai bewdi jiske liye mai puri life thankful rahungaa .
+“You’re not just beautiful. You’re a vibe, an emotion, a safe place.” 💗
+Hamari dosti ko 3 saal ho gaye... aur in teen saalon mein,tune mujhe sirf friend se zyada banake rakha. Lekin kal tujhe uss tarah dekhkar, ek alag hi emotion utha… ek aisi feeling jo kabhi kisi ke liye feel nahi ki. Shayad isliye kehta hoon:
+"Some friendships are meant to bloom into something more, and some hearts recognize home in a smile." 🌹
+Tujhe kal dekhke sirf ek hi baat dil se nikli:
+"You wore tradition bewdi like royalty and carried elegance like poetry." 👑📜
+Aur tujhe jitna dekhta gaya… utna hi doobta gaya. Woh chand si muskaan, wo halki si blush, wo hairstyle… sab kuch jaise ek perfect movie scene lag raha tha. Tu khud bhi nahi jaanti, kitni beautiful lag rahi thi kal — aur sirf bahar se nahi, andar se bhi. ❤️ Tere jaisa insaan milna… ek blessing hai. And kal tujhe dekhke, mujhe meri blessing ka asli sense samajh aaya. Tera hona meri life ka best chapter hai, aur tu uss chapter ki sabse khoobsurat line hai.
+"You're the kind of beautiful people write poems about… and I just did." ✨✍️
+Kabhi kabhi lagta hai, tu meri life mein sirf ekdosti banke aayi thi, par tere hone se meri life aur bhi colorful ho gayi hai. Tu bina bole meri khamoshi samajh jaati hai. Tere ek smile se meri saari thakan door ho jaati hai. Aur kal… wo smile lethal thi 🔥
+"You don’t just light up the room — you are the room’s light my bestie." 🌟
+Tujhe dekhkar sirf pyaar nahi hota bewdi… ek peace sa feel hota hai. Tu meri calmness bhi hai, aur excitement bhi. Tu meri good days ki reason hai, aur bad days ki relief bhi.
+“If I had one wish, I’d freeze that moment — you in that dress, me lost in you.” ⏳❤️
+Tu meri life ki woh melody hai jise baar-baar sunne ka mann karta hai. Aur sach kahoon toh, kal ke baad tujhe aur bhi zyada special nazar se dekhne laga hoon. Shayad friendship ke uss level se thoda aage… lekin respect aur pyaar dono barabar. Aur haan… ek baat aur kehni thi:
+"If loving your smile is wrong, then I never want to be right." 😘
+Toh meri jaan se bhi pyari bestfriend, thank you for being the most beautiful chapter of my life — inside out.Aur kal… kal tune meri aankhon ko woh tasveer di, jisko main kabhi bhool nahi paunga.
+Stay this beautiful, stay this real, and never stop being you bewdi. Because "you" is my favorite thing ever and always my pasandida aurat no one ever takes ur place my bewdi. 💖
+With all my heart 💖, 
+Your loving bewda 😁😉.`;
+
+
+        const signature = "❤️ Your Bewda ❤️";
+
+        const letter = document.querySelector('.letter');
+        const signatureElement = document.querySelector('.signature');
+        const nextButton = document.querySelector('.next-button');
+        const loadingHearts = document.querySelector('.loading-hearts');
+
+        let letterIndex = 0;
+        let isWriting = true;
+
+        // Add cursor element
+        const cursor = document.createElement('span');
+        cursor.className = 'cursor';
+        letter.appendChild(cursor);
+
+        function writeLetter() {
+            if (letterIndex < loveLetter.length) {
+                letter.textContent = loveLetter.substring(0, letterIndex + 1);
+                letter.appendChild(cursor);
+                letterIndex++;
+
+                const currentChar = loveLetter[letterIndex - 1];
+                let delay = 50;
+
+                if (/[,.!]/.test(currentChar)) delay = 400;
+                if (/\n/.test(currentChar)) delay = 800;
+
+                setTimeout(writeLetter, delay);
+            } else {
+                isWriting = false;
+                cursor.remove();
+
+                setTimeout(() => {
+                    signatureElement.textContent = signature;
+                    signatureElement.classList.add('show');
+
+                    setTimeout(() => {
+                        nextButton.classList.add('show');
+                    }, 1000);
+                }, 500);
+            }
+        }
+
+        setTimeout(writeLetter, 1000);
+
+        nextButton.addEventListener('click', () => {
+            document.querySelector('.container').classList.add('fade-out');
+            loadingHearts.classList.add('show');
+
+            setTimeout(() => {
+                window.location.href = 'love.html'; // Replace with your next page URL
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
